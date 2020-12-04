@@ -1,0 +1,304 @@
+*{
+	font-family: "ZCOOLXiaoWei-Regular", serif;
+}
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+
+/* Code commun*/
+
+@media all and (max-width: 480px)
+{
+	#imageAccueil{
+		float: none;
+	}
+	#textAccueil{
+		width: 80%;
+	}
+
+}
+
+@media (min-width: 480px) and (max-width: 780px)
+{
+
+
+}
+
+@media (min-width: 480px) and (max-width: 979px)
+{
+
+
+}
+@font-face {
+	font-family: "ZCOOLXiaoWei-Regular";
+	src: url("../Police/ZCOOLXiaoWei-Regular.ttf");
+}
+
+main {
+	height: 100%;
+	background-color: whitesmoke;
+}
+
+
+menu {
+	height: 100%;
+}
+
+/* index*/
+
+#imageAccueil{
+/*	position: absolute;
+	top: 25%;
+	left: 7%;*/
+	box-shadow:0 30px 70px rgba(0,0,0,.2);
+	float: left;
+	position: relative;
+	top: 190px;
+	left: 151px;
+}
+
+#textAccueil{
+	/*position: absolute;
+	left: 7%;
+	top: 71.4%;*/
+	background-color: white;
+	width: 42.1%;
+	height: 46.4%;
+	box-shadow:0 30px 70px rgba(0,0,0,.1);
+	transition:0.5s;
+	padding: (10%, 10%, 10%, 10%);
+	float: right;
+	position: relative;
+	top: 190px;
+	right: 151px;
+
+}
+
+#imageAccueil img{
+	height: 80%;
+	width: 100%;
+
+}
+
+#textAccueil:hover{
+	box-shadow:0 30px 70px rgba(0,0,0,.4);
+}
+#imageAccueil:hover{
+	box-shadow:0 30px 70px rgba(0,0,0,.4);
+}
+
+#textAccueil h1{
+	text-align: center;
+}
+
+#textAccueil p{
+	font-size: 110%;
+	text-align: center;
+
+}
+
+#textAccueil a{
+	text-decoration: none;
+	color: grey;
+}
+
+#textAccueil a:hover{
+	color: black;
+}
+/* PAGE CONNEXION */
+
+.card {
+	position:absolute;
+	top:65%;
+	left:80%;
+	transform:translate(-50%,-50%);
+	width:15%;
+	min-height:400px;
+	min-width: 15%;
+	background:#fff;
+	box-shadow:0 20px 50px rgba(0,0,0,.1);
+	border-radius:10px;
+	transition:0.5s;
+}
+.card:hover {
+	box-shadow:0 30px 70px rgba(0,0,0,.4);
+}
+.card .box {
+	position:absolute;
+	top:50%;
+	left:0;
+	transform:translateY(-50%);
+	text-align:center;
+	padding:20px;
+	box-sizing:border-box;
+	width:100%;
+}
+.card .box .img {
+	width:120px;
+	height:120px;
+	margin:0 auto;
+	border-radius:50%;
+	overflow:hidden;
+}
+.card .box .img img {
+	width:100%;
+	height:100%;
+}
+.card .box h2 {
+	font-size:20px;
+	color:#262626;
+	margin:20px auto;
+}
+.card .box h2 span {
+	font-size:14px;
+	background:#693b58;
+	color:#fff;
+	display:inline-block;
+	margin-top: 8%;
+	padding:2% 4%;
+	border-radius:15px;
+}
+.card .box p {
+	color:#262626;
+}
+.card .box span {
+	display:inline-flex;
+}
+.card .box ul {
+	margin:0;
+	padding:0;
+}
+.card .box ul li {
+	list-style:none;
+	float:left;
+}
+.card .box ul li a {
+	display:block;
+	color:#aaa;
+	margin:0 10px;
+	font-size:20px;
+	transition:0.5s;
+	text-align:center;
+}
+.card .box ul li:hover a {
+	color:#e91e63;
+	transform:rotateY(360deg);
+}
+
+/* PAGE INSCRIPTION */
+/*
+/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
+
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: whitesmoke;
+ 	font-family: 'Oxygen', sans-serif;
+}
+
+.main{
+ 	margin-top: 70px;
+}
+
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+/* PAGE PRISE DE RDV */
+#RDV{
+	position: absolute;
+	height: 80%;
+	width: 80%;
+	background-color: #e5e5e5;
+	margin-top: 5%;
+	margin-left: 10%;
+	border: solid #693b58;
+}
+
+#RDV h1{
+	color: #693b58;
+	margin-top: 0%;
+	padding-left: 10%;
+	border-bottom: solid #693b58;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+#RDV fieldset{
+	margin-top: 2%;
+	margin-left: 8%;
+	margin-right: 55%;
+}
+
+#ListeMassage{
+	height: 5%;
+	width: 50%;
+	margin: 5%;
+	margin-left: 22%;
+	border: solid #693b58;
+}
+
+/* petit ecran */
