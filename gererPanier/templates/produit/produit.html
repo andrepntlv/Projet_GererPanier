@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-include('BDD.php');
-
-$produit = $dbc->query('SELECT * FROM produit ORDER BY ID_PRODUIT DESC');
-
-?>
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -17,7 +8,7 @@ $produit = $dbc->query('SELECT * FROM produit ORDER BY ID_PRODUIT DESC');
   <title>Blog - Yatara massages</title>
 </head>
 <body>
-  <?php include('nav.php'); ?>
+  {% include "../include/nav.html" %}
   <link rel="stylesheet" href="../../static/css/boot1.css" />
   <link rel="stylesheet" href="../../static/css/style.css">
   <link rel="stylesheet" href="../../static/css/card.css">
@@ -25,27 +16,24 @@ $produit = $dbc->query('SELECT * FROM produit ORDER BY ID_PRODUIT DESC');
     <div class="card-body px-lg-5 pt-0">
       <div class="container">
         <div class="row">
-          <?php foreach ($produit as $produitSolo):
-
-            if ($produitSolo['ESTACTIF_PRODUIT'] == 1) {
-              ?>
+          {% for prod in produits %}
             <div class="col-md-4">
               <div class="card-content">
                 <div class="card-img">
-                  <img src="images/<?php echo $produitSolo['IMAGE_PRODUIT'] ?>" alt="">
+                  {{ prod.image }}
                 </div>
                 <div class="card-desc" style="height: 270px;">
-                  <h3><?php echo $produitSolo['NOM_PRODUIT'] ?></h3>
-                  <p><?php echo $produitSolo['DESCRIPTION_PRODUIT'] ?></p>
-                  <a href="produitEntier.php?id=<?= $produitSolo['ID_PRODUIT'] ?>" class="btn-card" style="background-color: #e2725b;">voir plus</a>
-                </div>
+                  <h3>{{ prod.nom }}</h3>
+                  <p>{{ prod.description}}</p>
+                  <a href="produitEntier.html?id=<?= $produitSolo['ID_PRODUIT'] ?>" class="btn-card" style="background-color: #e2725b;">voir plus</a>
                 </div>
               </div>
-            <?php } endforeach ?>
-          </div>
+            </div>
+          {% endfor %}
         </div>
       </div>
-      <?php include('footer.php') ?>
-    </main>
+    </div>
+  </main>
+  {% include "../include/footer.html" %}
   </body>
-  </html>
+</html>
