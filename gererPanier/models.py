@@ -6,24 +6,12 @@ class Produit(models.Model):
     description = models.TextField()
     prix = models.DecimalField(decimal_places=2,max_digits=12)
     stock = models.IntegerField()
-    image = models.ImageField()
+    image = models.ImageField(null=True, blank=True, upload_to="images/")
     est_actif = models.IntegerField()
 
     def __str__(self):
         return self.nom
 
-class Client(models.Model):
-    nom = models.CharField(max_length=150)
-    prenom = models.CharField(max_length=150)
-    date_de_naissance = models.CharField(max_length=20)
-    email = models.EmailField(max_length=30)
-    telephone = models.CharField(max_length=15)
-    pseudo = models.CharField(max_length=15)
-    password = models.CharField(max_length=40)
-    est_actif = models.IntegerField()
-
-    def __str__(self):
-        return self.nom +" - " +self.prenom
 
 # class Commande(models.Model):
 #     id_client = models.ForeignKey(Client, on_delete=models.CASCADE)

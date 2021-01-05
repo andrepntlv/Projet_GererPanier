@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Colorlib Templates">
+  <meta name="author" content="Colorlib">
+  <meta name="keywords" content="Colorlib Templates">
+  <title>Article - Yatara massages</title>
+</head>
+<body>
+  {% include 'nav.html' %}
+  <link rel="stylesheet" href="../../static/css/boot1.css"/>
+  <main>
+      <div class="card card-cascade wider reverse" style="padding:9%; background-color: whitesmoke;">
+        <div class="view view-cascade overlay">
+          <img src="media/images/{{ prod.image }}">
+<!--          <img src="images/<?php echo $image ?>" class="d-block w-100" alt="..." style="max-height:650px;">-->
+        </div>
+        <div class="card-body card-body-cascade text-center" style="background-color: white; margin-top: 0px;">
+          <h4 class="card-title"><strong>{{ produit.nom }}</strong></h4>
+            <p class="card-text" >{{ produit.description }}</p>
+          <p class="card-text" >Prix unitaire: CHF {{ produit.prix }} </p>
+          <p class="card-text" >Stock: {{ produit.stock }}
+            {% if produit.stock > 1 %}
+                produits disponibles
+            {% else %}
+                produit disponible
+            {% endif %}
+              <br><br>
+              <a href="{% url 'ajout_article' produit.id %}"> <button class="btn btn-default" style="background-color: #e2725b;">Ajouter au panier</button></a>
+        </div>
+      </div>
+  </main>
+  {% include 'footer.html' %}
+</body>
+</html>

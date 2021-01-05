@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,8 +8,8 @@
   <title>Blog - Yatara massages</title>
 </head>
 <body>
-  {% include "../include/nav.html" %}
-  <link rel="stylesheet" href="../../static/css/boot1.css" />
+  {% include 'nav.html' %}
+  <link rel="stylesheet" href="../../static/css/boot1.css">
   <link rel="stylesheet" href="../../static/css/style.css">
   <link rel="stylesheet" href="../../static/css/card.css">
   <main style="height:90%">
@@ -20,12 +20,12 @@
             <div class="col-md-4">
               <div class="card-content">
                 <div class="card-img">
-                  {{ prod.image }}
+<!--                  <img src="media/images/{{ prod.image }}">-->
                 </div>
                 <div class="card-desc" style="height: 270px;">
                   <h3>{{ prod.nom }}</h3>
                   <p>{{ prod.description}}</p>
-                  <a href="produitEntier.html?id=<?= $produitSolo['ID_PRODUIT'] ?>" class="btn-card" style="background-color: #e2725b;">voir plus</a>
+                  <a href="{% url 'detailProduit' prod.id %}" class="btn-card" style="background-color: #e2725b;">voir plus</a>
                 </div>
               </div>
             </div>
@@ -34,6 +34,6 @@
       </div>
     </div>
   </main>
-  {% include "../include/footer.html" %}
+  {% include 'footer.html' %}
   </body>
 </html>

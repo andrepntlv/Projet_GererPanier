@@ -1,0 +1,85 @@
+@font-face {
+	font-family: "ZCOOLXiaoWei-Regular";
+	src: url("../Police/ZCOOLXiaoWei-Regular.ttf");
+}
+
+*{
+	font-family: "ZCOOLXiaoWei-Regular", serif;
+}
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: whitesmoke;
+}
+
+.redstar{
+	color: red;
+}
+
+	.contact{
+		padding: 4%;
+	}
+	.col-md-3{
+		background: #e2725b;
+		padding: 4%;
+	}
+
+	label{
+		color: #757575 !important;
+	}
+	.contact-info{
+		margin-top:10%;
+	}
+	.contact-info img{
+		margin-bottom: 15%;
+	}
+	.contact-info h2{
+		margin-bottom: 10%;
+    color: white;
+	}
+  .contact-info h4{
+    color: white;
+	}
+	.col-md-9{
+		background: #fff;
+		padding: 3%;
+    border: solid 0.5px lightgray;
+	}
+
+  .col-sm-10{
+		background: #fff;
+		padding: 2%;
+	}
+	.contact-form label{
+		font-weight:600;
+	}
+	.contact-form button{
+		background: #e2725b;
+		color: #fff;
+		font-weight: 600;
+		width: 25%;
+	}
+	.contact-form button:focus{
+		box-shadow:none;
+	}
+
+	.contact-info a h2{
+		text-decoration: none;
+		color: lightgray;
+	}
+
+	.contact-info span h2{
+		color: black;
+		text-align: center;
+	}
+
+	.contact-info a h2:hover{
+		text-decoration: none !important;
+		color: black;
+	}
