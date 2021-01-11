@@ -1,4 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+
+from .decorators import allowed_users
 from .models import Produit
 from cart.cart import Cart
 from django.contrib import messages
@@ -17,8 +20,10 @@ def detailProduit(request, id):
     }
     return render(request, 'produit/detailProduit.html', context)
 
-# Source à partir de la ligne d'en dessous: https://pypi.org/project/django-shopping-cart/
+# Source à partir de la ligne d'en dessous : https://pypi.org/project/django-shopping-cart/
 # Aide de Kevin Bonga
+@login_required(login_url="/login/")
+@allowed_users(allowed_groups=['client'])
 def panier(request):
     panier = Cart(request).cart.values()
     prixTotal = []
@@ -35,12 +40,16 @@ def panier(request):
     }
     return render(request, 'produit/panier.html', context)
 
+@login_required(login_url="/accounts/login/")
+@allowed_users(allowed_groups=['client'])
 def ajout_article(request, id):
     cart = Cart(request)
     product = Produit.objects.get(id=id)
     cart.add(product=product)
     return redirect("panier")
 
+@login_required(login_url="/accounts/login/")
+@allowed_users(allowed_groups=['client'])
 def suppression_article(request, id):
     cart = Cart(request)
     produit = Produit.objects.get(id=id)
@@ -48,6 +57,8 @@ def suppression_article(request, id):
     return redirect("panier")
 
 # quantite = 0
+@login_required(login_url="/accounts/login/")
+@allowed_users(allowed_groups=['client'])
 def item_increment(request, id):
     # global quantite
     cart = Cart(request)
@@ -63,12 +74,16 @@ def item_increment(request, id):
     cart.add(product=produit)
     return redirect("panier")
 
+@login_required(login_url="/accounts/login/")
+@allowed_users(allowed_groups=['client'])
 def item_decrement(request, id):
     cart = Cart(request)
     produit = Produit.objects.get(id=id)
     cart.decrement(product=produit)
     return redirect("panier")
 
+@login_required(login_url="/accounts/login/")
+@allowed_users(allowed_groups=['client'])
 def cart_clear(request):
     cart = Cart(request)
     cart.clear()
