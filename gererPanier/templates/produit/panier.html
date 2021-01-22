@@ -49,12 +49,33 @@
               </tr>
             {% endfor %}
               <a href="{% url 'cart_clear' %}"> Vider le panier </a>
-              <tr>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> Prix total : {{ prixTotal }}</td>
-              </tr>
+              {% if reduction and prixNet > 0 %}
+                <tr>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                  <td> Montant du panier : {{ prixTotal }}</td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                  <td>  - Réduction : {{ reduction }}</td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                  <td> Prix total : {{ prixNet }}</td>
+                </tr>
+              {% else %}
+                <tr>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                  <td> Prix total : {{ prixTotal }}</td>
+                </tr>
+              {% endif %}
           {% endif %}
         </tbody>
       </table>
