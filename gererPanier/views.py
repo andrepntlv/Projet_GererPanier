@@ -5,8 +5,6 @@ from .decorators import allowed_users
 from .models import Produit
 from cart.cart import Cart
 
-message = ""
-
 def gererproduit(request):
     produits = Produit.objects.all().filter(stock__gt=0).filter(est_actif=1)
     context = {
@@ -22,7 +20,7 @@ def detailProduit(request, id):
     return render(request, 'produit/detailProduit.html', context)
 
 # Source à partir de la ligne d'en dessous : https://pypi.org/project/django-shopping-cart/
-# Aide de Kevin Bonga
+# Aide de Kevin Bonga pour la view panier
 reduction = 0
 prixNet = 0
 @login_required(login_url="/login/")
@@ -87,7 +85,7 @@ def suppression_article(request, id):
 @allowed_users(allowed_groups=['client'])
 def item_increment(request, id):
     # global quantite
-    global message
+    # global message
     cart = Cart(request)
     produit = Produit.objects.get(id=id)
     # panier = Cart(request).cart.values()
