@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-
 from .decorators import allowed_users
 from .models import Produit
 from cart.cart import Cart
+
 
 def gererproduit(request):
     produits = Produit.objects.all().filter(stock__gt=0).filter(est_actif=1)
